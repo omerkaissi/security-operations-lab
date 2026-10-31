@@ -2,7 +2,7 @@
 
 ## Page 1 of 2 - Problem and design
 
-**Scope.** This security-operations exercise models a fictional fitness application using synthetic identities, documentation IP addresses and imaginary metadata counts. It does not access WHOOP systems, health records or real accounts. It is a portfolio lab, not production SOC work.
+**Scope.** This security-operations exercise models a fictional fitness application using synthetic identities, documentation IP addresses and imaginary metadata counts. It does not access health records or real accounts. It is a portfolio lab, not production SOC work.
 
 **Problem.** An analyst needs a queue that makes unusual sign-ins, protected-role assignments and exports reviewable without treating a rule match as proof of compromise. The lab must expose data-quality errors, preserve evidence and keep scenario answers away from detection.
 

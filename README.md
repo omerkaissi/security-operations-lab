@@ -1,6 +1,6 @@
 # Fitness Security Operations Lab
 
-An offline security-operations lab for a fictional fitness application. Identities, events, approvals, follow-up records and labels are synthetic; the lab does not access WHOOP systems, health data, real accounts or networks. It is a portfolio exercise, not production SOC experience.
+An offline security-operations lab for a fictional fitness application. Identities, events, approvals, follow-up records and labels are synthetic; the lab does not access health data, real accounts or networks. It is a portfolio exercise, not production SOC experience.
 
 The standard-library Python CLI validates JSONL, normalizes UTC, reports duplicates/conflicts, and applies three rules: repeated sign-in failures then success, protected-role assignment, and large or over-cap export. JSON alerts and CSV/Markdown queues retain evidence, priority rationale, confidence and unknowns. Actor groups are triage aids, not proof of causation. See the [detection catalog](docs/detection_catalog.md).
 

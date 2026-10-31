@@ -2,7 +2,7 @@
 
 ## Outcome and scope
 
-Build a small, offline security operations case study for a portfolio: three Python detections, a prioritized alert queue, meaningful tests, honest synthetic evaluation, two investigations and a phishing-response playbook. The fictional setting is a fitness application; it has no WHOOP affiliation or access. This is separate from existing personal integrations.
+Build a small, offline security operations case study for a portfolio: three Python detections, a prioritized alert queue, meaningful tests, honest synthetic evaluation, two investigations and a phishing-response playbook. The setting is a fictional fitness application.
 
 The selected Security Operations Lab directory is the authoritative source. The originally proposed `~/Projects/fitness-security-operations-lab` directory was absent during setup; no second working copy was created. Commands and program outputs use relative paths so the project can later move without code changes.
 
