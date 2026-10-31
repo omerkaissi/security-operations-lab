@@ -1,0 +1,70 @@
+{
+  "artifact_version": "1.0",
+  "synthetic": true,
+  "description": "Authored paper evidence, separate from evaluation labels; no real observation or communication occurred.",
+  "records": [
+    {
+      "evidence_id": "FU029_USER",
+      "case_id": "investigation:actor_029",
+      "recorded_at": "2026-01-15T10:15:00Z",
+      "recorded_by": "fictional_analyst_02",
+      "type": "fictional_user_confirmation",
+      "actor_id": "actor_029",
+      "event_ids": [
+        "evt_007",
+        "evt_008",
+        "evt_009",
+        "evt_010",
+        "evt_011",
+        "evt_012"
+      ],
+      "claim": "The fictional account owner describes forgotten-password retries and the 10:04:30 sign-in as their own.",
+      "verification": "In this paper exercise, the confirmation is stipulated as obtained through a verified channel; no contact occurred.",
+      "confirmation": "owner_recognizes"
+    },
+    {
+      "evidence_id": "FU029_MFA",
+      "case_id": "investigation:actor_029",
+      "recorded_at": "2026-01-15T10:18:00Z",
+      "recorded_by": "fictional_analyst_02",
+      "type": "fictional_auth_context",
+      "actor_id": "actor_029",
+      "event_ids": [
+        "evt_012"
+      ],
+      "session_id": "session_012",
+      "mfa_result": "success",
+      "device_assessment": "known",
+      "claim": "The fictional follow-up record associates the successful sign-in with successful MFA and a known device."
+    },
+    {
+      "evidence_id": "FU017_USER",
+      "case_id": "investigation:actor_017",
+      "recorded_at": "2026-01-15T13:20:00Z",
+      "recorded_by": "fictional_analyst_01",
+      "type": "fictional_user_confirmation",
+      "actor_id": "actor_017",
+      "event_ids": [
+        "evt_006"
+      ],
+      "claim": "The fictional account owner denies initiating the 09:15 successful sign-in.",
+      "verification": "In this paper exercise, the denial is stipulated as obtained through a verified channel; no contact occurred.",
+      "confirmation": "owner_denies"
+    },
+    {
+      "evidence_id": "FU017_CHANGE",
+      "case_id": "investigation:actor_017",
+      "recorded_at": "2026-01-15T13:25:00Z",
+      "recorded_by": "fictional_change_owner",
+      "type": "fictional_change_review",
+      "actor_id": "actor_017",
+      "target_user_id": "actor_analyst_01",
+      "new_role": "data_export_admin",
+      "event_ids": [
+        "role_002"
+      ],
+      "authorization_result": "not_authorized",
+      "claim": "The fictional change owner reviewed this specific role assignment and reports that it was not authorized."
+    }
+  ]
+}

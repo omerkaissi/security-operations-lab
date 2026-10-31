@@ -1,0 +1,2 @@
+# PDFs are binary files; do not apply text diffs or line-ending conversion.
+*.pdf binary

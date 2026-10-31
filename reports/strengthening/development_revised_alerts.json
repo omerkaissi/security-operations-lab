@@ -1,0 +1,343 @@
+{
+  "alerts": [
+    {
+      "actor_id": "dev_export_12",
+      "alert_id": "large_export:1.0:D12_E",
+      "anchor_event_id": "D12_E",
+      "confidence": "export volume observed; intent unconfirmed",
+      "event_allocations": [
+        {
+          "approval_comparisons": [
+            {
+              "approval": {
+                "actor_id": "actor_job_01",
+                "approval_id": "EXP-LAB-001",
+                "maximum_total_records": 1500,
+                "resource": "fitness_session_metadata",
+                "valid_from": "2026-01-15T02:00:00Z",
+                "valid_until": "2026-01-15T02:15:00Z"
+              },
+              "checks": {
+                "actor_id": false,
+                "resource": true,
+                "valid_interval": false
+              },
+              "matches": false,
+              "used_before_event": 0
+            }
+          ],
+          "approval_id": null,
+          "approved": 0,
+          "event_id": "D12_E",
+          "over_cap": 0,
+          "record_count": 1000,
+          "timestamp": "2026-01-15T05:00:00Z",
+          "unapproved": 1000
+        }
+      ],
+      "evidence_event_ids": [
+        "D12_E"
+      ],
+      "investigation_id": "investigation:dev_export_12",
+      "missing_context": [
+        "export destination",
+        "export purpose",
+        "earlier approval-period events may be absent"
+      ],
+      "next_action": "Review the export purpose, destination, approval usage and surrounding activity.",
+      "priority_rationale": "Large or over-cap exports may expose sensitive information.",
+      "reason": "Rolling window contains unapproved volume at threshold or an exceeded approval cap.",
+      "resource": "fitness_session_metadata",
+      "rule_id": "large_export",
+      "rule_version": "1.0",
+      "severity": "high",
+      "status": "open",
+      "timestamp": "2026-01-15T05:00:00Z",
+      "window_first_event_time": "2026-01-15T05:00:00Z",
+      "window_seconds": 900,
+      "window_totals": {
+        "approved": 0,
+        "over_cap": 0,
+        "record_count": 1000,
+        "unapproved": 1000
+      }
+    },
+    {
+      "actor_id": "dev_admin_10",
+      "alert_id": "unexpected_protected_role:1.0:D10_R",
+      "anchor_event_id": "D10_R",
+      "approval_comparisons": [
+        {
+          "approval": {
+            "actor_id": "actor_admin_01",
+            "change_id": "CHG-LAB-001",
+            "new_role": "data_export_admin",
+            "target_user_id": "actor_analyst_01",
+            "valid_from": "2026-01-15T13:00:00Z",
+            "valid_until": "2026-01-15T13:30:00Z"
+          },
+          "checks": {
+            "actor_id": false,
+            "change_id": false,
+            "new_role": true,
+            "target_user_id": true,
+            "valid_interval": true
+          },
+          "matches": false
+        }
+      ],
+      "change_id": null,
+      "confidence": "assignment observed; authorization and intent unconfirmed",
+      "evidence_event_ids": [
+        "D10_R"
+      ],
+      "investigation_id": "investigation:dev_admin_10",
+      "missing_context": [
+        "independent change confirmation",
+        "actor intent",
+        "change ID",
+        "source IP",
+        "session ID"
+      ],
+      "new_role": "data_export_admin",
+      "next_action": "Verify the assignment and change authorization with the responsible team.",
+      "priority_rationale": "A protected role can grant broad privileges.",
+      "reason": "No change ID supplied.",
+      "resource": null,
+      "rule_id": "unexpected_protected_role",
+      "rule_version": "1.0",
+      "severity": "high",
+      "status": "open",
+      "target_user_id": "actor_analyst_01",
+      "timestamp": "2026-01-15T13:01:00Z"
+    },
+    {
+      "actor_id": "development_actor_01",
+      "alert_id": "signin_failure_then_success:1.1:D01_S",
+      "confidence": "pattern observed; compromise unconfirmed",
+      "evidence_event_ids": [
+        "D01_F1",
+        "D01_F2",
+        "D01_F3",
+        "D01_F4",
+        "D01_S"
+      ],
+      "failure_count": 4,
+      "failure_window_start": "2026-01-15T08:30:00Z",
+      "investigation_id": "investigation:development_actor_01",
+      "latest_failure_time": "2026-01-15T08:33:00Z",
+      "missing_context": [
+        "MFA decisions",
+        "device posture",
+        "user confirmation",
+        "session telemetry",
+        "session ID missing from one or more evidence events"
+      ],
+      "next_action": "Review sign-in and session context and confirm the activity with the user.",
+      "priority_rationale": "Repeated failures followed by a success warrant investigation.",
+      "reason": "4 failures followed by a success within the configured windows.",
+      "resource": null,
+      "rule_id": "signin_failure_then_success",
+      "rule_version": "1.1",
+      "severity": "medium",
+      "status": "open",
+      "success_event_id": "D01_S",
+      "timestamp": "2026-01-15T08:34:00Z"
+    },
+    {
+      "actor_id": "development_actor_02",
+      "alert_id": "signin_failure_then_success:1.1:D02_S",
+      "confidence": "pattern observed; compromise unconfirmed",
+      "evidence_event_ids": [
+        "D02_F1",
+        "D02_F2",
+        "D02_F3",
+        "D02_F4",
+        "D02_S"
+      ],
+      "failure_count": 4,
+      "failure_window_start": "2026-01-15T09:00:00Z",
+      "investigation_id": "investigation:development_actor_02",
+      "latest_failure_time": "2026-01-15T09:02:00Z",
+      "missing_context": [
+        "MFA decisions",
+        "device posture",
+        "user confirmation",
+        "session telemetry",
+        "session ID missing from one or more evidence events"
+      ],
+      "next_action": "Review sign-in and session context and confirm the activity with the user.",
+      "priority_rationale": "Repeated failures followed by a success warrant investigation.",
+      "reason": "4 failures followed by a success within the configured windows.",
+      "resource": null,
+      "rule_id": "signin_failure_then_success",
+      "rule_version": "1.1",
+      "severity": "medium",
+      "status": "open",
+      "success_event_id": "D02_S",
+      "timestamp": "2026-01-15T09:02:30Z"
+    },
+    {
+      "actor_id": "development_actor_03",
+      "alert_id": "signin_failure_then_success:1.1:D03_S",
+      "confidence": "pattern observed; compromise unconfirmed",
+      "evidence_event_ids": [
+        "D03_F1",
+        "D03_F2",
+        "D03_F3",
+        "D03_F4",
+        "D03_F5",
+        "D03_S"
+      ],
+      "failure_count": 5,
+      "failure_window_start": "2026-01-15T09:30:00Z",
+      "investigation_id": "investigation:development_actor_03",
+      "latest_failure_time": "2026-01-15T09:32:00Z",
+      "missing_context": [
+        "MFA decisions",
+        "device posture",
+        "user confirmation",
+        "session telemetry",
+        "session ID missing from one or more evidence events"
+      ],
+      "next_action": "Review sign-in and session context and confirm the activity with the user.",
+      "priority_rationale": "Repeated failures followed by a success warrant investigation.",
+      "reason": "5 failures followed by a success within the configured windows.",
+      "resource": null,
+      "rule_id": "signin_failure_then_success",
+      "rule_version": "1.1",
+      "severity": "medium",
+      "status": "open",
+      "success_event_id": "D03_S",
+      "timestamp": "2026-01-15T09:33:00Z"
+    },
+    {
+      "actor_id": "development_actor_04",
+      "alert_id": "signin_failure_then_success:1.1:D04_S",
+      "confidence": "pattern observed; compromise unconfirmed",
+      "evidence_event_ids": [
+        "D04_F1",
+        "D04_F2",
+        "D04_F3",
+        "D04_F4",
+        "D04_F5",
+        "D04_S"
+      ],
+      "failure_count": 5,
+      "failure_window_start": "2026-01-15T10:00:00Z",
+      "investigation_id": "investigation:development_actor_04",
+      "latest_failure_time": "2026-01-15T10:02:40Z",
+      "missing_context": [
+        "MFA decisions",
+        "device posture",
+        "user confirmation",
+        "session telemetry",
+        "session ID missing from one or more evidence events"
+      ],
+      "next_action": "Review sign-in and session context and confirm the activity with the user.",
+      "priority_rationale": "Repeated failures followed by a success warrant investigation.",
+      "reason": "5 failures followed by a success within the configured windows.",
+      "resource": null,
+      "rule_id": "signin_failure_then_success",
+      "rule_version": "1.1",
+      "severity": "medium",
+      "status": "open",
+      "success_event_id": "D04_S",
+      "timestamp": "2026-01-15T10:03:00Z"
+    },
+    {
+      "actor_id": "development_actor_08",
+      "alert_id": "signin_failure_then_success:1.1:D08_S",
+      "confidence": "pattern observed; compromise unconfirmed",
+      "evidence_event_ids": [
+        "D08_F1",
+        "D08_F2",
+        "D08_F3",
+        "D08_F4",
+        "D08_F5",
+        "D08_F6",
+        "D08_S"
+      ],
+      "failure_count": 6,
+      "failure_window_start": "2026-01-15T12:00:00Z",
+      "investigation_id": "investigation:development_actor_08",
+      "latest_failure_time": "2026-01-15T12:10:00Z",
+      "missing_context": [
+        "MFA decisions",
+        "device posture",
+        "user confirmation",
+        "session telemetry",
+        "session ID missing from one or more evidence events"
+      ],
+      "next_action": "Review sign-in and session context and confirm the activity with the user.",
+      "priority_rationale": "Repeated failures followed by a success warrant investigation.",
+      "reason": "6 failures followed by a success within the configured windows.",
+      "resource": null,
+      "rule_id": "signin_failure_then_success",
+      "rule_version": "1.1",
+      "severity": "medium",
+      "status": "open",
+      "success_event_id": "D08_S",
+      "timestamp": "2026-01-15T12:15:00Z"
+    }
+  ],
+  "input": {
+    "conflicted_ids": 0,
+    "conflicts": [],
+    "duplicate_lines": 0,
+    "errors": [],
+    "input_lines": 47,
+    "rejected_lines": 0,
+    "valid_unique_events_accepted": 47
+  },
+  "input_event_ids": [
+    "D11_E",
+    "D12_E",
+    "D01_F1",
+    "D01_F2",
+    "D01_F3",
+    "D01_F4",
+    "D01_S",
+    "D02_F1",
+    "D02_F2",
+    "D02_F3",
+    "D02_F4",
+    "D02_S",
+    "D03_F1",
+    "D03_F2",
+    "D03_F3",
+    "D03_F4",
+    "D03_F5",
+    "D03_S",
+    "D04_F1",
+    "D04_F2",
+    "D04_F3",
+    "D04_F4",
+    "D04_F5",
+    "D04_S",
+    "D05_F1",
+    "D05_F2",
+    "D05_F3",
+    "D05_S",
+    "D06_F1",
+    "D06_F2",
+    "D06_F3",
+    "D06_F4",
+    "D06_S",
+    "D07_F1",
+    "D07_F2",
+    "D07_F3",
+    "D07_F4",
+    "D07_S",
+    "D08_F1",
+    "D08_F2",
+    "D08_F3",
+    "D08_F4",
+    "D08_F5",
+    "D08_F6",
+    "D08_S",
+    "D09_R",
+    "D10_R"
+  ],
+  "status": "complete"
+}

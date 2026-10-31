@@ -1,0 +1,90 @@
+{
+  "counting_unit": "scenario",
+  "input_path": "data/events/signins.jsonl",
+  "label_version": "1.0",
+  "matching_method": "Exact rule_id, success_event_id and ordered evidence_event_ids; no extra candidates.",
+  "scenarios": [
+    {
+      "authored_explanation": "Simulated unauthorized access; intent is scenario truth, not proven by logs.",
+      "event_ids": [
+        "evt_001",
+        "evt_002",
+        "evt_003",
+        "evt_004",
+        "evt_005",
+        "evt_006"
+      ],
+      "expected_candidates": [
+        {
+          "evidence_event_ids": [
+            "evt_001",
+            "evt_002",
+            "evt_003",
+            "evt_004",
+            "evt_005",
+            "evt_006"
+          ],
+          "rule_id": "signin_failure_then_success",
+          "rule_version": "1.0",
+          "success_event_id": "evt_006"
+        }
+      ],
+      "scenario_id": "S01",
+      "security_truth": "malicious"
+    },
+    {
+      "authored_explanation": "Legitimate forgotten-password retries; intentional security false positive.",
+      "event_ids": [
+        "evt_007",
+        "evt_008",
+        "evt_009",
+        "evt_010",
+        "evt_011",
+        "evt_012"
+      ],
+      "expected_candidates": [
+        {
+          "evidence_event_ids": [
+            "evt_007",
+            "evt_008",
+            "evt_009",
+            "evt_010",
+            "evt_011",
+            "evt_012"
+          ],
+          "rule_id": "signin_failure_then_success",
+          "rule_version": "1.0",
+          "success_event_id": "evt_012"
+        }
+      ],
+      "scenario_id": "S02",
+      "security_truth": "benign"
+    },
+    {
+      "authored_explanation": "Ordinary single retry.",
+      "event_ids": [
+        "evt_013",
+        "evt_014"
+      ],
+      "expected_candidates": [],
+      "scenario_id": "S03",
+      "security_truth": "benign"
+    },
+    {
+      "authored_explanation": "Simulated unauthorized access below the rule threshold; intentional miss.",
+      "event_ids": [
+        "evt_015",
+        "evt_016",
+        "evt_017",
+        "evt_018",
+        "evt_019"
+      ],
+      "expected_candidates": [],
+      "scenario_id": "S04",
+      "security_truth": "malicious"
+    }
+  ],
+  "seed": 20261030,
+  "status": "authored expectations; detector has not been run",
+  "synthetic": true
+}

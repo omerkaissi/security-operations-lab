@@ -1,0 +1,35 @@
+{
+  "description": "Selected four-failure profile frozen after development results and before any holdout detector/evaluator run. Holdout and development fixtures were authored together before evaluation; no held-out result used to select profile.",
+  "development": {
+    "baseline": {
+      "fn": 3,
+      "fp": 1,
+      "tn": 4,
+      "tp": 4
+    },
+    "revised": {
+      "fn": 2,
+      "fp": 2,
+      "tn": 3,
+      "tp": 5
+    }
+  },
+  "files": {
+    "config/policy.json": "ea9b4d54acf12d4f5a937faed7f9470ee2ad5030073835490a7dc8b613da45cf",
+    "config/policy_signin_v11.json": "78e2e7c5f2a8fea9d3c83892b744493856de28f7b30f5991e986f155ff56af79",
+    "data/events/strengthening_development_v1.jsonl": "42900632ec6f2d53808386e404754cefffd8ba4bad4a6e446e74b793b2a3f340",
+    "data/events/strengthening_holdout_v1.jsonl": "85445905a64e88b2dd4e97608467954c92f3502f8584d0cda57ab80ca8727713",
+    "data/labels/strengthening_development_baseline_v1.json": "18015e87216b874885acd50842bed2af5a847662ce8984ecb77be62157607478",
+    "data/labels/strengthening_development_revised_v1.json": "d73fc97d36ead3b42e76af1d89c36c0382a3bb20734eda7b29c14b8f2ea6080c",
+    "data/labels/strengthening_holdout_baseline_v1.json": "f40ae34b1fb6427a92f9f2cc7fb017fc2a30979d3db9514a6948f59970796a1c",
+    "data/labels/strengthening_holdout_revised_v1.json": "8162a260e8a030427a149b375e2b19398f54bdf5931dade80fbbdd5cc402f333",
+    "data/strengthening_fixture_manifest.json": "090a3b7316f2178667e8dcfd20572e301a8ef1ee512f48b73572634e57f09bed",
+    "docs/strengthening_experiment.md": "6a46002901888f3b3be96cca30cfabfbef47ce6189c1233109e93d11d6df0c3b",
+    "scripts/generate_strengthening_fixtures.py": "cf7bc73cfcc4892bdaf3df45003815d5fcee18a06bc5e3ccc28f2982240ab77a",
+    "secops_lab/core.py": "b42f0e933d35526de313feace8f94a24d949631f211db2a8be8bf1f100742346",
+    "secops_lab/evaluate.py": "ee4b2ac2dc0b6e64d9c60f55147ed01b4d99769824dd48e7acff291524cf3a06",
+    "secops_lab/rules.py": "3c05c40ec6674681130822ca6ae5d81053c3a0561686bfdbe74f62a17c76b8cf"
+  },
+  "frozen_at_utc": "2026-10-31T01:18:49.170799+00:00",
+  "holdout_detector_runs_at_freeze": 0
+}

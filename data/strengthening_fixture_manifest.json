@@ -1,0 +1,35 @@
+{
+  "description": "Self-authored fictional development and held-out sets; seed shuffles order only.",
+  "files": {
+    "data/events/strengthening_development_v1.jsonl": {
+      "bytes": 9983,
+      "seed": 20261101,
+      "sha256": "42900632ec6f2d53808386e404754cefffd8ba4bad4a6e446e74b793b2a3f340"
+    },
+    "data/events/strengthening_holdout_v1.jsonl": {
+      "bytes": 9431,
+      "seed": 20261102,
+      "sha256": "85445905a64e88b2dd4e97608467954c92f3502f8584d0cda57ab80ca8727713"
+    },
+    "data/labels/strengthening_development_baseline_v1.json": {
+      "bytes": 4036,
+      "seed": 20261101,
+      "sha256": "18015e87216b874885acd50842bed2af5a847662ce8984ecb77be62157607478"
+    },
+    "data/labels/strengthening_development_revised_v1.json": {
+      "bytes": 4646,
+      "seed": 20261101,
+      "sha256": "d73fc97d36ead3b42e76af1d89c36c0382a3bb20734eda7b29c14b8f2ea6080c"
+    },
+    "data/labels/strengthening_holdout_baseline_v1.json": {
+      "bytes": 3641,
+      "seed": 20261102,
+      "sha256": "f40ae34b1fb6427a92f9f2cc7fb017fc2a30979d3db9514a6948f59970796a1c"
+    },
+    "data/labels/strengthening_holdout_revised_v1.json": {
+      "bytes": 4556,
+      "seed": 20261102,
+      "sha256": "8162a260e8a030427a149b375e2b19398f54bdf5931dade80fbbdd5cc402f333"
+    }
+  }
+}

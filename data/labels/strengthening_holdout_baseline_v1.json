@@ -1,0 +1,183 @@
+{
+  "dataset_version": "holdout-1.0",
+  "label_version": "1.0",
+  "scenarios": [
+    {
+      "event_ids": [
+        "H01_F1",
+        "H01_F2",
+        "H01_F3",
+        "H01_F4",
+        "H01_S"
+      ],
+      "expected_candidates": [],
+      "scenario_id": "H01",
+      "security_truth": "malicious"
+    },
+    {
+      "event_ids": [
+        "H02_F1",
+        "H02_F2",
+        "H02_F3",
+        "H02_F4",
+        "H02_S"
+      ],
+      "expected_candidates": [],
+      "scenario_id": "H02",
+      "security_truth": "benign"
+    },
+    {
+      "event_ids": [
+        "H03_F1",
+        "H03_F2",
+        "H03_F3",
+        "H03_F4",
+        "H03_F5",
+        "H03_S"
+      ],
+      "expected_candidates": [
+        {
+          "evidence_event_ids": [
+            "H03_F1",
+            "H03_F2",
+            "H03_F3",
+            "H03_F4",
+            "H03_F5",
+            "H03_S"
+          ],
+          "rule_id": "signin_failure_then_success",
+          "rule_version": "1.0",
+          "success_event_id": "H03_S"
+        }
+      ],
+      "scenario_id": "H03",
+      "security_truth": "malicious"
+    },
+    {
+      "event_ids": [
+        "H04_F1",
+        "H04_F2",
+        "H04_F3",
+        "H04_S"
+      ],
+      "expected_candidates": [],
+      "scenario_id": "H04",
+      "security_truth": "benign"
+    },
+    {
+      "event_ids": [
+        "H05_F1",
+        "H05_F2",
+        "H05_F3",
+        "H05_F4",
+        "H05_S"
+      ],
+      "expected_candidates": [],
+      "scenario_id": "H05",
+      "security_truth": "malicious"
+    },
+    {
+      "event_ids": [
+        "H06_F1",
+        "H06_F2",
+        "H06_F3",
+        "H06_F4",
+        "H06_S"
+      ],
+      "expected_candidates": [],
+      "scenario_id": "H06",
+      "security_truth": "benign"
+    },
+    {
+      "event_ids": [
+        "H07_F1",
+        "H07_F2",
+        "H07_F3",
+        "H07_F4",
+        "H07_F5",
+        "H07_S"
+      ],
+      "expected_candidates": [
+        {
+          "evidence_event_ids": [
+            "H07_F1",
+            "H07_F2",
+            "H07_F3",
+            "H07_F4",
+            "H07_F5",
+            "H07_S"
+          ],
+          "rule_id": "signin_failure_then_success",
+          "rule_version": "1.0",
+          "success_event_id": "H07_S"
+        }
+      ],
+      "scenario_id": "H07",
+      "security_truth": "benign"
+    },
+    {
+      "event_ids": [
+        "H08_F1",
+        "H08_F2",
+        "H08_F3",
+        "H08_F4",
+        "H08_S"
+      ],
+      "expected_candidates": [],
+      "scenario_id": "H08",
+      "security_truth": "malicious"
+    },
+    {
+      "event_ids": [
+        "H09_R"
+      ],
+      "expected_candidates": [],
+      "scenario_id": "H09",
+      "security_truth": "benign"
+    },
+    {
+      "event_ids": [
+        "H10_R"
+      ],
+      "expected_candidates": [
+        {
+          "anchor_event_id": "H10_R",
+          "evidence_event_ids": [
+            "H10_R"
+          ],
+          "rule_id": "unexpected_protected_role",
+          "rule_version": "1.0"
+        }
+      ],
+      "scenario_id": "H10",
+      "security_truth": "benign"
+    },
+    {
+      "event_ids": [
+        "H11_E"
+      ],
+      "expected_candidates": [
+        {
+          "anchor_event_id": "H11_E",
+          "evidence_event_ids": [
+            "H11_E"
+          ],
+          "rule_id": "large_export",
+          "rule_version": "1.0"
+        }
+      ],
+      "scenario_id": "H11",
+      "security_truth": "malicious"
+    },
+    {
+      "event_ids": [
+        "H12_E"
+      ],
+      "expected_candidates": [],
+      "scenario_id": "H12",
+      "security_truth": "benign"
+    }
+  ],
+  "seed": 20261102,
+  "synthetic": true
+}

@@ -1,0 +1,250 @@
+{
+  "input_path": "data/events/checkpoint03.jsonl",
+  "label_version": "1.0",
+  "scenarios": [
+    {
+      "authored_explanation": "Simulated unauthorized access; intent is scenario truth, not proven by logs.",
+      "event_ids": [
+        "evt_001",
+        "evt_002",
+        "evt_003",
+        "evt_004",
+        "evt_005",
+        "evt_006"
+      ],
+      "expected_candidates": [
+        {
+          "evidence_event_ids": [
+            "evt_001",
+            "evt_002",
+            "evt_003",
+            "evt_004",
+            "evt_005",
+            "evt_006"
+          ],
+          "rule_id": "signin_failure_then_success",
+          "rule_version": "1.0",
+          "success_event_id": "evt_006"
+        }
+      ],
+      "scenario_id": "S01",
+      "security_truth": "malicious"
+    },
+    {
+      "authored_explanation": "Legitimate forgotten-password retries; intentional security false positive.",
+      "event_ids": [
+        "evt_007",
+        "evt_008",
+        "evt_009",
+        "evt_010",
+        "evt_011",
+        "evt_012"
+      ],
+      "expected_candidates": [
+        {
+          "evidence_event_ids": [
+            "evt_007",
+            "evt_008",
+            "evt_009",
+            "evt_010",
+            "evt_011",
+            "evt_012"
+          ],
+          "rule_id": "signin_failure_then_success",
+          "rule_version": "1.0",
+          "success_event_id": "evt_012"
+        }
+      ],
+      "scenario_id": "S02",
+      "security_truth": "benign"
+    },
+    {
+      "authored_explanation": "Ordinary single retry.",
+      "event_ids": [
+        "evt_013",
+        "evt_014"
+      ],
+      "expected_candidates": [],
+      "scenario_id": "S03",
+      "security_truth": "benign"
+    },
+    {
+      "authored_explanation": "Simulated unauthorized access below the rule threshold; intentional miss.",
+      "event_ids": [
+        "evt_015",
+        "evt_016",
+        "evt_017",
+        "evt_018",
+        "evt_019"
+      ],
+      "expected_candidates": [],
+      "scenario_id": "S04",
+      "security_truth": "malicious"
+    },
+    {
+      "event_ids": [
+        "role_001"
+      ],
+      "expected_candidates": [],
+      "scenario_id": "R01",
+      "security_truth": "benign"
+    },
+    {
+      "event_ids": [
+        "role_002"
+      ],
+      "expected_candidates": [
+        {
+          "anchor_event_id": "role_002",
+          "evidence_event_ids": [
+            "role_002"
+          ],
+          "rule_id": "unexpected_protected_role",
+          "rule_version": "1.0"
+        }
+      ],
+      "scenario_id": "R02",
+      "security_truth": "malicious"
+    },
+    {
+      "event_ids": [
+        "role_003"
+      ],
+      "expected_candidates": [
+        {
+          "anchor_event_id": "role_003",
+          "evidence_event_ids": [
+            "role_003"
+          ],
+          "rule_id": "unexpected_protected_role",
+          "rule_version": "1.0"
+        }
+      ],
+      "scenario_id": "R03",
+      "security_truth": "benign"
+    },
+    {
+      "event_ids": [
+        "role_004"
+      ],
+      "expected_candidates": [
+        {
+          "anchor_event_id": "role_004",
+          "evidence_event_ids": [
+            "role_004"
+          ],
+          "rule_id": "unexpected_protected_role",
+          "rule_version": "1.0"
+        }
+      ],
+      "scenario_id": "R04",
+      "security_truth": "malicious"
+    },
+    {
+      "event_ids": [
+        "role_005"
+      ],
+      "expected_candidates": [],
+      "scenario_id": "R05",
+      "security_truth": "benign"
+    },
+    {
+      "event_ids": [
+        "role_006"
+      ],
+      "expected_candidates": [],
+      "scenario_id": "R06",
+      "security_truth": "benign"
+    },
+    {
+      "event_ids": [
+        "exp_001",
+        "exp_002"
+      ],
+      "expected_candidates": [
+        {
+          "anchor_event_id": "exp_002",
+          "evidence_event_ids": [
+            "exp_001",
+            "exp_002"
+          ],
+          "rule_id": "large_export",
+          "rule_version": "1.0"
+        }
+      ],
+      "scenario_id": "E01",
+      "security_truth": "malicious"
+    },
+    {
+      "event_ids": [
+        "exp_003",
+        "exp_004"
+      ],
+      "expected_candidates": [],
+      "scenario_id": "E02",
+      "security_truth": "benign"
+    },
+    {
+      "event_ids": [
+        "exp_005"
+      ],
+      "expected_candidates": [
+        {
+          "anchor_event_id": "exp_005",
+          "evidence_event_ids": [
+            "exp_003",
+            "exp_004",
+            "exp_005"
+          ],
+          "rule_id": "large_export",
+          "rule_version": "1.0"
+        }
+      ],
+      "scenario_id": "E03",
+      "security_truth": "malicious"
+    },
+    {
+      "event_ids": [
+        "exp_006"
+      ],
+      "expected_candidates": [
+        {
+          "anchor_event_id": "exp_006",
+          "evidence_event_ids": [
+            "exp_006"
+          ],
+          "rule_id": "large_export",
+          "rule_version": "1.0"
+        }
+      ],
+      "scenario_id": "E04",
+      "security_truth": "malicious"
+    },
+    {
+      "event_ids": [
+        "exp_007"
+      ],
+      "expected_candidates": [],
+      "scenario_id": "E05",
+      "security_truth": "benign"
+    },
+    {
+      "event_ids": [
+        "exp_008"
+      ],
+      "expected_candidates": [
+        {
+          "anchor_event_id": "exp_008",
+          "evidence_event_ids": [
+            "exp_008"
+          ],
+          "rule_id": "large_export",
+          "rule_version": "1.0"
+        }
+      ],
+      "scenario_id": "E06",
+      "security_truth": "benign"
+    }
+  ],
+  "synthetic": true
+}

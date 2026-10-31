@@ -1,0 +1,5 @@
+{"schema_version":"1.0","event_id":"practice_f1","timestamp":"2026-04-10T10:00:00Z","actor_id":"practice_actor","event_type":"sign_in","outcome":"failure","source":"identity_audit"}
+{"schema_version":"1.0","event_id":"practice_f2","timestamp":"2026-04-10T10:03:00Z","actor_id":"practice_actor","event_type":"sign_in","outcome":"failure","source":"identity_audit"}
+{"schema_version":"1.0","event_id":"practice_f3","timestamp":"2026-04-10T10:06:00Z","actor_id":"practice_actor","event_type":"sign_in","outcome":"failure","source":"identity_audit"}
+{"schema_version":"1.0","event_id":"practice_f4","timestamp":"2026-04-10T10:10:00Z","actor_id":"practice_actor","event_type":"sign_in","outcome":"failure","source":"identity_audit"}
+{"schema_version":"1.0","event_id":"practice_s","timestamp":"2026-04-10T10:15:00Z","actor_id":"practice_actor","event_type":"sign_in","outcome":"success","source":"identity_audit"}

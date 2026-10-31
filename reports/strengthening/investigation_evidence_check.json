@@ -1,0 +1,54 @@
+{
+  "cases": [
+    {
+      "alert_ids": [
+        "signin_failure_then_success:1.0:evt_006",
+        "unexpected_protected_role:1.0:role_002"
+      ],
+      "document": "docs/investigations/actor_017.md",
+      "event_ids": [
+        "evt_001",
+        "evt_002",
+        "evt_003",
+        "evt_004",
+        "evt_005",
+        "evt_006",
+        "role_002"
+      ]
+    },
+    {
+      "alert_ids": [
+        "signin_failure_then_success:1.0:evt_012"
+      ],
+      "document": "docs/investigations/actor_029.md",
+      "event_ids": [
+        "evt_007",
+        "evt_008",
+        "evt_009",
+        "evt_010",
+        "evt_011",
+        "evt_012"
+      ]
+    }
+  ],
+  "checkpoint": "04",
+  "checks": [
+    "Each cited alert and event ID exists; all evidence IDs for each cited alert appear in its case.",
+    "Document Markdown links resolve locally.",
+    "Selected sign-in timing, actor, IP, session, role and approval details match source records.",
+    "The separate benign scenario label and paper-only exercise marker are present.",
+    "Follow-up IDs, event links, chronology, fictional confirmations, MFA session and role-review assertions were checked."
+  ],
+  "followup_evidence_ids": [
+    "FU017_CHANGE",
+    "FU017_USER",
+    "FU029_MFA",
+    "FU029_USER"
+  ],
+  "limitations": [
+    "Automated checks do not prove every narrative statement, interpret intent, or independently review the documents.",
+    "Paper exercise statements are fictional assumptions, not observed logs or performed actions."
+  ],
+  "status": "passed",
+  "verification_kind": "document links, cited ID existence and selected source claims; self-review, not independent review"
+}

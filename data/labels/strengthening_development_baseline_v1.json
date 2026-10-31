@@ -1,0 +1,200 @@
+{
+  "dataset_version": "development-1.0",
+  "label_version": "1.0",
+  "scenarios": [
+    {
+      "event_ids": [
+        "D01_F1",
+        "D01_F2",
+        "D01_F3",
+        "D01_F4",
+        "D01_S"
+      ],
+      "expected_candidates": [],
+      "scenario_id": "D01",
+      "security_truth": "malicious"
+    },
+    {
+      "event_ids": [
+        "D02_F1",
+        "D02_F2",
+        "D02_F3",
+        "D02_F4",
+        "D02_S"
+      ],
+      "expected_candidates": [],
+      "scenario_id": "D02",
+      "security_truth": "benign"
+    },
+    {
+      "event_ids": [
+        "D03_F1",
+        "D03_F2",
+        "D03_F3",
+        "D03_F4",
+        "D03_F5",
+        "D03_S"
+      ],
+      "expected_candidates": [
+        {
+          "evidence_event_ids": [
+            "D03_F1",
+            "D03_F2",
+            "D03_F3",
+            "D03_F4",
+            "D03_F5",
+            "D03_S"
+          ],
+          "rule_id": "signin_failure_then_success",
+          "rule_version": "1.0",
+          "success_event_id": "D03_S"
+        }
+      ],
+      "scenario_id": "D03",
+      "security_truth": "malicious"
+    },
+    {
+      "event_ids": [
+        "D04_F1",
+        "D04_F2",
+        "D04_F3",
+        "D04_F4",
+        "D04_F5",
+        "D04_S"
+      ],
+      "expected_candidates": [
+        {
+          "evidence_event_ids": [
+            "D04_F1",
+            "D04_F2",
+            "D04_F3",
+            "D04_F4",
+            "D04_F5",
+            "D04_S"
+          ],
+          "rule_id": "signin_failure_then_success",
+          "rule_version": "1.0",
+          "success_event_id": "D04_S"
+        }
+      ],
+      "scenario_id": "D04",
+      "security_truth": "benign"
+    },
+    {
+      "event_ids": [
+        "D05_F1",
+        "D05_F2",
+        "D05_F3",
+        "D05_S"
+      ],
+      "expected_candidates": [],
+      "scenario_id": "D05",
+      "security_truth": "malicious"
+    },
+    {
+      "event_ids": [
+        "D06_F1",
+        "D06_F2",
+        "D06_F3",
+        "D06_F4",
+        "D06_S"
+      ],
+      "expected_candidates": [],
+      "scenario_id": "D06",
+      "security_truth": "malicious"
+    },
+    {
+      "event_ids": [
+        "D07_F1",
+        "D07_F2",
+        "D07_F3",
+        "D07_F4",
+        "D07_S"
+      ],
+      "expected_candidates": [],
+      "scenario_id": "D07",
+      "security_truth": "benign"
+    },
+    {
+      "event_ids": [
+        "D08_F1",
+        "D08_F2",
+        "D08_F3",
+        "D08_F4",
+        "D08_F5",
+        "D08_F6",
+        "D08_S"
+      ],
+      "expected_candidates": [
+        {
+          "evidence_event_ids": [
+            "D08_F1",
+            "D08_F2",
+            "D08_F3",
+            "D08_F4",
+            "D08_F5",
+            "D08_F6",
+            "D08_S"
+          ],
+          "rule_id": "signin_failure_then_success",
+          "rule_version": "1.0",
+          "success_event_id": "D08_S"
+        }
+      ],
+      "scenario_id": "D08",
+      "security_truth": "malicious"
+    },
+    {
+      "event_ids": [
+        "D09_R"
+      ],
+      "expected_candidates": [],
+      "scenario_id": "D09",
+      "security_truth": "benign"
+    },
+    {
+      "event_ids": [
+        "D10_R"
+      ],
+      "expected_candidates": [
+        {
+          "anchor_event_id": "D10_R",
+          "evidence_event_ids": [
+            "D10_R"
+          ],
+          "rule_id": "unexpected_protected_role",
+          "rule_version": "1.0"
+        }
+      ],
+      "scenario_id": "D10",
+      "security_truth": "malicious"
+    },
+    {
+      "event_ids": [
+        "D11_E"
+      ],
+      "expected_candidates": [],
+      "scenario_id": "D11",
+      "security_truth": "benign"
+    },
+    {
+      "event_ids": [
+        "D12_E"
+      ],
+      "expected_candidates": [
+        {
+          "anchor_event_id": "D12_E",
+          "evidence_event_ids": [
+            "D12_E"
+          ],
+          "rule_id": "large_export",
+          "rule_version": "1.0"
+        }
+      ],
+      "scenario_id": "D12",
+      "security_truth": "malicious"
+    }
+  ],
+  "seed": 20261101,
+  "synthetic": true
+}

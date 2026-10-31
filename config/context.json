@@ -1,0 +1,19 @@
+{
+  "context_version": "1.0",
+  "synthetic": true,
+  "description": "Invented inventory and impact context; no incident truth or approval decisions.",
+  "identities": [
+    {"actor_id": "actor_017", "account_type": "human", "team": "customer_support", "email": "support17@pulse-lab.example", "expected_role": "member"},
+    {"actor_id": "actor_029", "account_type": "human", "team": "customer_support", "email": "support29@pulse-lab.example", "expected_role": "member"},
+    {"actor_id": "actor_041", "account_type": "human", "team": "analytics", "email": "analyst41@pulse-lab.example", "expected_role": "member"},
+    {"actor_id": "actor_053", "account_type": "human", "team": "operations", "email": "ops53@pulse-lab.example", "expected_role": "member"},
+    {"actor_id": "actor_admin_01", "account_type": "human", "team": "it_operations", "email": "admin01@pulse-lab.example", "expected_role": "organization_admin"},
+    {"actor_id": "actor_analyst_01", "account_type": "human", "team": "analytics", "email": "analyst01@pulse-lab.example", "expected_role": "member"},
+    {"actor_id": "actor_job_01", "account_type": "service", "team": "data_operations", "email": "job01@pulse-lab.example", "expected_role": "data_export_admin"}
+  ],
+  "resources": [
+    {"resource": "fitness_session_metadata", "classification": "fictional_sensitive", "description": "Imaginary metadata counts only; no exported records are present."},
+    {"resource": "public_activity_catalog", "classification": "fictional_public", "description": "Imaginary public activity definitions."}
+  ],
+  "telemetry_unavailable": ["MFA decisions", "device posture", "user confirmations", "export destinations"]
+}

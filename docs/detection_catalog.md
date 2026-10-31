@@ -1,0 +1,31 @@
+# Detection catalog — Checkpoint 03
+
+All rules consume validated, deduplicated, UTC-normalized events and operational policy, never labels. Severity is potential impact, confidence is observation strength, and none of these rules proves intent. Input errors produce partial output; approval decisions apply only to accepted input, so a partial run cannot establish the true complete-period approval usage.
+
+## Sign-in failure then success — `signin_failure_then_success` 1.0
+
+The success event anchors the candidate. Apply the actor-specific, latest-failure-anchored inclusive policy windows and reset at every success as specified in PROJECT_SPEC.md. Evidence is chronological by instant then ID.
+
+## Protected role assignment — `unexpected_protected_role` 1.0
+
+Each successful protected-role assignment is evaluated independently. The supplied change ID must identify an approval with matching actor, target, new role, and inclusive UTC interval. Missing ID, unknown ID, or a known ID whose dimensions differ are distinct reasons. Show the comparisons against every policy approval, including per-dimension results; a matching approval suppresses the candidate. A failed change or unprotected new role does not trigger. Candidate ID is the rule/version and the event ID.
+
+## Large or over-cap export — `large_export` 1.0
+
+For each successful export, order by normalized timestamp then event ID and evaluate its actor and resource separately. The inclusive rolling window `[event time − window_seconds, event time]` includes prior successful events at the same timestamp only when their IDs sort earlier, plus the anchor event. Failed operations contribute zero. Each qualifying anchor produces one alert; overlapping windows are not coalesced, so each individual event has traceable evidence. Alert ID uses the anchor ID; evidence contains all successful events in that window in chronological order then ID. A zero-count anchor can therefore produce another alert while a window remains qualifying. No unseen or future event is included.
+
+Allocate each matching approval's aggregate cap to successful exports in its inclusive validity interval, in timestamp/ID order, across the entire supplied input, independently of the rolling window. A matching approval requires actor, resource and interval; its allocated volume is `min(event count, remaining cap)` and the rest is over-cap. Unmatched volume is unapproved. The policy rejects overlapping approval intervals for the same actor/resource (including touching endpoints) and duplicate approval IDs to prevent ambiguous or double allocation. Approval usage is based on the supplied data, not an external ledger, so missing earlier events limit conclusions. The alert shows the window's total, approved, unapproved and over-cap volumes, event-level allocations, and a comparison against every approval. Trigger if `(window total >= threshold and unapproved or over-cap volume > 0)` OR `window over-cap volume > 0`, even if the over-cap remainder is below threshold. Thus the threshold applies to total observed volume, while any exceeded approved cap is independently investigable. Fully approved volume never triggers by itself. An approval does not exempt an actor's other resources or times.
+
+## Queue and correlation
+
+Prioritize high before medium before low; tie-break by UTC timestamp then alert ID. Queue records carry the alert ID, reason, confidence, evidence IDs and next action. Correlation is a deterministic triage grouping by actor, not an assertion of one incident: all alerts with the same actor share `investigation:<actor_id>`, even if their times or resources differ. Individual alert evidence remains intact. This simple grouping is a starting point for analyst review, not a claim of causation.
+
+## Evaluation contract
+
+Evaluation is a separate offline command that reads detector JSON and authored labels; the detector never reads labels. A scenario has disjoint event membership. Cross-rule candidate identity is `(rule_id, rule_version, anchor_event_id, ordered evidence_event_ids)`, where the anchor is success ID for sign-ins and event ID for other rules. A candidate belongs to a scenario if its anchor belongs to that scenario; an unknown anchor is an unmatched extra. Count exact expected/observed candidates as multisets, reporting matched, missing and extra candidates independently of scenario security truth. Security evaluation counts one scenario as positive if it has at least one observed candidate, then compares that boolean with the scenario's authored malicious/benign truth. Report scenario TP, FP, TN, FN and precision/recall; zero denominators produce JSON null, not an invented rate. Security counts do not assess incident truth outside the fixture, and extra candidates never disappear into security counts. Evaluation refuses partial detector output, any difference between the detector input ID inventory and scenario membership, duplicate/overlapping scenario membership, unknown truth labels, orphan/ambiguous expected anchors or invalid candidate shapes. It does not establish production accuracy.
+
+## Strengthening experiment and strict evaluation
+
+The baseline policy remains `config/policy.json`, sign-in version 1.0 and five failures. An opt-in experimental profile, `config/policy_signin_v11.json`, identifies version 1.1 and uses four failures; all other sign-in windows and reset semantics are unchanged. Profile versions identify the policy treatment; they do not assert a production deployment. No labels or scenario identities are detector inputs. Details, freeze sequence and limitations are in [experiment plan](strengthening_experiment.md); recorded results are in [summary](../reports/strengthening/summary.json).
+
+`python -m secops_lab.evaluate RESULTS LABELS --check` writes the ordinary report and exits 0 only when expected and actual candidate/evidence multisets exactly match, 1 for a mismatch or output failure, and 2 for invalid input/configuration (including partial detector output). Without `--check`, a valid evaluation report exits 0 even if its `candidate_conformance` section contains missing or extra candidates. Evaluation completion is not conformance. Security counts are a separate question; lowering priority does not remove a false positive.

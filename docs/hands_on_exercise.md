@@ -1,0 +1,11 @@
+# Hands-on exercise: explain, predict, change, evaluate
+
+This is an optional exercise that can be repeated. The project owner completed a guided walkthrough, including a scratch-policy change and test run; readers can attempt it independently. Use the project root and `.venv/bin/python` without network access. The data is fictional. Write your predictions before opening the [separate suggested answers](hands_on_answers.md).
+
+1. **Explain.** In your own words, explain the baseline sign-in rule's grouping, threshold, two time windows and reset. What can the pattern not prove?
+2. **Predict.** Read `data/exercises/unfamiliar_signin.jsonl`. Will baseline 1.0 alert? Which event IDs would be evidence if the threshold were four? Pay attention to both inclusive endpoints.
+3. **Run and inspect.** Run `.venv/bin/python -m secops_lab data/exercises/unfamiliar_signin.jsonl` and compare the JSON with your baseline prediction. Explain the `status`, counts and alert list.
+4. **Make one justified policy change.** Create an ignored scratch directory and copy the baseline policy: `mkdir -p reports/runs` then `cp config/policy.json reports/runs/practice_policy.json`. In the copy only, change `sign_in.minimum_failures` from 5 to 4 and add `sign_in.rule_version` as `"1.1"`. Explain why this could help and what it could make worse. Run `.venv/bin/python -m secops_lab data/exercises/unfamiliar_signin.jsonl --policy reports/runs/practice_policy.json`. Inspect the alert ID, `failure_count`, ordered `evidence_event_ids`, severity, confidence and missing context. Do not modify the frozen profiles or scenario labels.
+5. **Explain verification.** Run `.venv/bin/python -m unittest discover -s tests -v`. The suite tests the project profiles and contracts; it does not automatically test your scratch policy as a separate configuration. Explain what passed, what the tests do not prove, and why a four-failure threshold can increase benign alerts. Compare your prediction with the actual result, then consult the answer key.
+
+For a personal contribution, document your reasoning and any change you actually make in your own words. The exercise alone does not imply production experience or authorship of earlier work.
