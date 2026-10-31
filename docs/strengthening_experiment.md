@@ -6,7 +6,9 @@
 
 The baseline sign-in rule version 1.0 requires five failures, so an authored malicious four-failure sequence can be missed. Hypothesis: a separately versioned 1.1 profile requiring four failures, with the existing failure window, success delay, reset and deterministic tie rules unchanged, can recover some four-failure malicious scenarios but will also alert on more benign retries. This is a detection change: newly emitted alerts count as additional false positives when their scenario truth is benign. Changing priority would not remove a false positive.
 
-The change is policy-driven and actor-agnostic; no labels, scenario names or hardcoded scenario identities enter detection. The baseline profile and its original fixtures and reports remain unchanged. The revised profile uses minimum_failures=4 and rule_version=1.1, all other settings matching baseline. Version is attached to candidate identity, not inferred from the threshold alone.
+The change is policy-driven and actor-agnostic; no labels, scenario names or hardcoded scenario identities enter detection. The revised profile uses minimum_failures=4 and rule_version=1.1, all other settings matching baseline. Version is attached to candidate identity, not inferred from the threshold alone.
+
+After the original experiment, the export resource identifier was renamed consistently throughout the code, policies, fixtures and reports to give the lab a general application-security setting. The original freeze hashes remain recorded separately from the post-freeze migration hashes; the migrated fixtures were rerun to verify that the candidate matches and scenario counts were unchanged. These later verification runs reuse the holdout and are not a fresh blind evaluation.
 
 ## Design, matching and success criteria
 

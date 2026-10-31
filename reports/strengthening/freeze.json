@@ -31,5 +31,26 @@
     "secops_lab/rules.py": "3c05c40ec6674681130822ca6ae5d81053c3a0561686bfdbe74f62a17c76b8cf"
   },
   "frozen_at_utc": "2026-10-31T01:18:49.170799+00:00",
-  "holdout_detector_runs_at_freeze": 0
+  "holdout_detector_runs_at_freeze": 0,
+  "post_freeze_migration": {
+    "description": "Post-freeze rename of an export resource identifier and related presentation to a general application-security setting; original pre-holdout hashes remain in files. Current hashes below describe the migrated artifacts and do not claim a new pre-holdout freeze.",
+    "files": {
+      "config/policy.json": "8d5c1e43313601b089617131b071f1ed8ed7f866dc2520efffc8fa63a4ec8250",
+      "config/policy_signin_v11.json": "4b2367bf9707c6ee96feeb5f60ffe14730fb526466219ad7d1c2b0912d8f1118",
+      "data/events/strengthening_development_v1.jsonl": "40ff982bf19706129c0f6fe8d3e9d0e2d6ed5fd25734b87d9bc317580de5e45c",
+      "data/events/strengthening_holdout_v1.jsonl": "f40174692b3d4f5a4744a128b1fd71fadf851bc94474aabb267ac60fddeed111",
+      "data/labels/strengthening_development_baseline_v1.json": "18015e87216b874885acd50842bed2af5a847662ce8984ecb77be62157607478",
+      "data/labels/strengthening_development_revised_v1.json": "d73fc97d36ead3b42e76af1d89c36c0382a3bb20734eda7b29c14b8f2ea6080c",
+      "data/labels/strengthening_holdout_baseline_v1.json": "f40ae34b1fb6427a92f9f2cc7fb017fc2a30979d3db9514a6948f59970796a1c",
+      "data/labels/strengthening_holdout_revised_v1.json": "8162a260e8a030427a149b375e2b19398f54bdf5931dade80fbbdd5cc402f333",
+      "data/strengthening_fixture_manifest.json": "11e89311c3e396400caf14eae01fb157f6530e46f407551c152a88346a8556e8",
+      "docs/strengthening_experiment.md": "fc95adce2da3c37f02c6741421eae89476ac28bca92f9d619f29c26502e77a14",
+      "scripts/generate_strengthening_fixtures.py": "5df24ca6b436f28599a270d96f4ff682cf2f0d58fa6ca9aee2dcd433ac438e1f",
+      "secops_lab/core.py": "9cbb394e3e049ca386d6eb1359317f08cd07315b9d0ad75231f7cdf181669647",
+      "secops_lab/evaluate.py": "ee4b2ac2dc0b6e64d9c60f55147ed01b4d99769824dd48e7acff291524cf3a06",
+      "secops_lab/rules.py": "956026136885cc2e3924d83be5e4f9dbd44feaaa2a6a93375010e77df14ceb80"
+    },
+    "holdout_note": "Both profiles were rerun after migration to verify unchanged behavior; these are repeat uses of the authored holdout, not fresh blind evaluations.",
+    "migrated_at_utc": "2026-10-31T05:26:21.090181+00:00"
+  }
 }

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://pulse-lab.example/schema/event-1.0.json",
-  "title": "Synthetic fitness application event v1.0",
+  "title": "Synthetic application event v1.0",
   "description": "Offline schema artifact. Its example URL is an identifier, not a live endpoint. Runtime validation is implemented for Checkpoint 02.",
   "type": "object",
   "required": ["schema_version", "event_id", "timestamp", "actor_id", "event_type", "outcome", "source"],
@@ -48,7 +48,7 @@
       "properties": {
         "event_type": {"const": "data_export"},
         "source": {"const": "application_audit"},
-        "resource": {"enum": ["fitness_session_metadata", "public_activity_catalog"]},
+        "resource": {"enum": ["account_activity_metadata", "public_activity_catalog"]},
         "record_count": {"type": "integer", "minimum": 0}
       }
     }

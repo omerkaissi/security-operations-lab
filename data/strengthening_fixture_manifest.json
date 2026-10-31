@@ -2,14 +2,14 @@
   "description": "Self-authored fictional development and held-out sets; seed shuffles order only.",
   "files": {
     "data/events/strengthening_development_v1.jsonl": {
-      "bytes": 9983,
+      "bytes": 9985,
       "seed": 20261101,
-      "sha256": "42900632ec6f2d53808386e404754cefffd8ba4bad4a6e446e74b793b2a3f340"
+      "sha256": "40ff982bf19706129c0f6fe8d3e9d0e2d6ed5fd25734b87d9bc317580de5e45c"
     },
     "data/events/strengthening_holdout_v1.jsonl": {
-      "bytes": 9431,
+      "bytes": 9433,
       "seed": 20261102,
-      "sha256": "85445905a64e88b2dd4e97608467954c92f3502f8584d0cda57ab80ca8727713"
+      "sha256": "f40174692b3d4f5a4744a128b1fd71fadf851bc94474aabb267ac60fddeed111"
     },
     "data/labels/strengthening_development_baseline_v1.json": {
       "bytes": 4036,

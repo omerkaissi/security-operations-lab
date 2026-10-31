@@ -2,7 +2,7 @@
 {"actor_id":"holdout_actor_05","event_id":"H05_F1","event_type":"sign_in","outcome":"failure","schema_version":"1.0","source":"identity_audit","source_ip":"192.0.2.80","timestamp":"2026-01-15T10:30:00Z"}
 {"actor_id":"holdout_actor_05","event_id":"H05_F4","event_type":"sign_in","outcome":"failure","schema_version":"1.0","source":"identity_audit","source_ip":"192.0.2.80","timestamp":"2026-01-15T10:31:00Z"}
 {"actor_id":"holdout_actor_08","event_id":"H08_F3","event_type":"sign_in","outcome":"failure","schema_version":"1.0","source":"identity_audit","source_ip":"192.0.2.80","timestamp":"2026-01-15T12:06:40Z"}
-{"actor_id":"hold_export_11","event_id":"H11_E","event_type":"data_export","outcome":"success","record_count":1001,"resource":"fitness_session_metadata","schema_version":"1.0","source":"application_audit","timestamp":"2026-01-15T06:00:00Z"}
+{"actor_id":"hold_export_11","event_id":"H11_E","event_type":"data_export","outcome":"success","record_count":1001,"resource":"account_activity_metadata","schema_version":"1.0","source":"application_audit","timestamp":"2026-01-15T06:00:00Z"}
 {"actor_id":"holdout_actor_06","event_id":"H06_F4","event_type":"sign_in","outcome":"failure","schema_version":"1.0","source":"identity_audit","source_ip":"192.0.2.80","timestamp":"2026-01-15T11:10:01Z"}
 {"actor_id":"holdout_actor_07","event_id":"H07_F3","event_type":"sign_in","outcome":"failure","schema_version":"1.0","source":"identity_audit","source_ip":"192.0.2.80","timestamp":"2026-01-15T11:30:50Z"}
 {"actor_id":"holdout_actor_07","event_id":"H07_F2","event_type":"sign_in","outcome":"failure","schema_version":"1.0","source":"identity_audit","source_ip":"192.0.2.80","timestamp":"2026-01-15T11:30:10Z"}
@@ -30,7 +30,7 @@
 {"actor_id":"holdout_actor_04","event_id":"H04_F2","event_type":"sign_in","outcome":"failure","schema_version":"1.0","source":"identity_audit","source_ip":"192.0.2.80","timestamp":"2026-01-15T10:02:00Z"}
 {"actor_id":"holdout_actor_05","event_id":"H05_F3","event_type":"sign_in","outcome":"failure","schema_version":"1.0","source":"identity_audit","source_ip":"192.0.2.80","timestamp":"2026-01-15T10:30:40Z"}
 {"actor_id":"holdout_actor_03","event_id":"H03_F2","event_type":"sign_in","outcome":"failure","schema_version":"1.0","source":"identity_audit","source_ip":"192.0.2.80","timestamp":"2026-01-15T09:30:10Z"}
-{"actor_id":"actor_job_01","event_id":"H12_E","event_type":"data_export","outcome":"success","record_count":1500,"resource":"fitness_session_metadata","schema_version":"1.0","source":"application_audit","timestamp":"2026-01-15T02:15:00Z"}
+{"actor_id":"actor_job_01","event_id":"H12_E","event_type":"data_export","outcome":"success","record_count":1500,"resource":"account_activity_metadata","schema_version":"1.0","source":"application_audit","timestamp":"2026-01-15T02:15:00Z"}
 {"actor_id":"holdout_actor_06","event_id":"H06_S","event_type":"sign_in","outcome":"success","schema_version":"1.0","source":"identity_audit","source_ip":"192.0.2.80","timestamp":"2026-01-15T11:10:02Z"}
 {"actor_id":"holdout_actor_07","event_id":"H07_F4","event_type":"sign_in","outcome":"failure","schema_version":"1.0","source":"identity_audit","source_ip":"192.0.2.80","timestamp":"2026-01-15T11:31:40Z"}
 {"actor_id":"holdout_actor_06","event_id":"H06_F1","event_type":"sign_in","outcome":"failure","schema_version":"1.0","source":"identity_audit","source_ip":"192.0.2.80","timestamp":"2026-01-15T11:00:00Z"}

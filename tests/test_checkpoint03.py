@@ -24,7 +24,7 @@ def role(id="r", stamp="13:00:00", actor="actor_admin_01", target="actor_analyst
     return item
 
 
-def export(id, stamp, count, actor="actor_x", resource="fitness_session_metadata", outcome="success"):
+def export(id, stamp, count, actor="actor_x", resource="account_activity_metadata", outcome="success"):
     return {"schema_version": "1.0", "event_id": id, "timestamp": "2026-01-15T" + stamp + "Z", "actor_id": actor, "event_type": "data_export", "source": "application_audit", "outcome": outcome, "resource": resource, "record_count": count}
 
 

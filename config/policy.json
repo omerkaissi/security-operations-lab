@@ -29,7 +29,7 @@
       {
         "approval_id": "EXP-LAB-001",
         "actor_id": "actor_job_01",
-        "resource": "fitness_session_metadata",
+        "resource": "account_activity_metadata",
         "valid_from": "2026-01-15T02:00:00Z",
         "valid_until": "2026-01-15T02:15:00Z",
         "maximum_total_records": 1500

@@ -2,9 +2,9 @@
 
 ## Outcome and scope
 
-Build a small, offline security operations case study for a portfolio: three Python detections, a prioritized alert queue, meaningful tests, honest synthetic evaluation, two investigations and a phishing-response playbook. The setting is a fictional fitness application.
+Build a small, offline security operations case study for a portfolio: three Python detections, a prioritized alert queue, meaningful tests, honest synthetic evaluation, two investigations and a phishing-response playbook. The setting is a fictional application.
 
-The selected Security Operations Lab directory is the authoritative source. The originally proposed `~/Projects/fitness-security-operations-lab` directory was absent during setup; no second working copy was created. Commands and program outputs use relative paths so the project can later move without code changes.
+The selected Security Operations Lab directory is the authoritative source. Commands and program outputs use relative paths so the project can later move without code changes.
 
 Use Python 3.12+, the standard library, unittest, JSON Lines events, JSON policy/results and CSV/Markdown analyst output. No cloud services, containers, dashboards, LLM APIs, credentials, real health records or extra detections in version one. The project virtual environment provides Python 3.13.18, meeting the target; Python 3.9.6 was a temporary setup-only fallback.
 

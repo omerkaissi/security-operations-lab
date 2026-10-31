@@ -3,7 +3,7 @@ from collections import defaultdict
 from datetime import datetime, timedelta
 from .core import IDENTIFIER, ROLES, utc_timestamp
 
-RESOURCES = {"fitness_session_metadata", "public_activity_catalog"}
+RESOURCES = {"account_activity_metadata", "public_activity_catalog"}
 
 
 def instant(value):

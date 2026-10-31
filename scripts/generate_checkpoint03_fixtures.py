@@ -15,7 +15,7 @@ def role(event_id, stamp, actor="actor_017", target="actor_analyst_01", new="dat
     return e
 
 
-def export(event_id, stamp, actor, count, resource="fitness_session_metadata"):
+def export(event_id, stamp, actor, count, resource="account_activity_metadata"):
     return {"schema_version": "1.0", "event_id": event_id, "timestamp": "2026-01-15T" + stamp + "Z", "actor_id": actor,
             "event_type": "data_export", "outcome": "success", "source": "application_audit", "resource": resource, "record_count": count}
 

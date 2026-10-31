@@ -74,7 +74,7 @@ def validate_event(event):
         if key in event and (not isinstance(event[key], str) or event[key] not in ROLES):
             raise ValueError(f"invalid {key}")
     if kind == "data_export":
-        if event["resource"] not in ("fitness_session_metadata", "public_activity_catalog"):
+        if event["resource"] not in ("account_activity_metadata", "public_activity_catalog"):
             raise ValueError("invalid resource")
         if type(event["record_count"]) is not int or event["record_count"] < 0:
             raise ValueError("record_count must be a nonnegative integer")

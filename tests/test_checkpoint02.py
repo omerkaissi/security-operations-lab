@@ -50,7 +50,7 @@ class ValidationTests(unittest.TestCase):
             validate_event(missing)
 
     def test_other_event_shapes_and_integer_types(self):
-        export = event("x", event_type="data_export", source="application_audit", resource="fitness_session_metadata", record_count=1)
+        export = event("x", event_type="data_export", source="application_audit", resource="account_activity_metadata", record_count=1)
         self.assertEqual(validate_event(export)["record_count"], 1)
         for count in (True, 1.0, -1, "1"):
             with self.subTest(count=count), self.assertRaises(ValueError):
@@ -58,7 +58,7 @@ class ValidationTests(unittest.TestCase):
         role = event("r", event_type="role_change", target_user_id="target", previous_role="member", new_role="support")
         self.assertEqual(validate_event(role)["new_role"], "support")
         with self.assertRaises(ValueError):
-            validate_event(dict(role, resource="fitness_session_metadata"))
+            validate_event(dict(role, resource="account_activity_metadata"))
 
     def test_invalid_lines_visible_empty_and_duplicate_keys(self):
         events, counts = ingest([event("ok"), "", "{broken", '{"event_id":"one","event_id":"two"}'])

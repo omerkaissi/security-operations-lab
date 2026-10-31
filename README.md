@@ -1,6 +1,6 @@
-# Fitness Security Operations Lab
+# Security Operations Lab
 
-An offline security-operations lab for a fictional fitness application. Identities, events, approvals, follow-up records and labels are synthetic; the lab does not access health data, real accounts or networks. It is a portfolio exercise, not production SOC experience.
+An offline security-operations lab for a fictional application. Identities, events, approvals, follow-up records and labels are synthetic; the lab does not access health data, real accounts or networks. It is a portfolio exercise, not production SOC experience.
 
 The standard-library Python CLI validates JSONL, normalizes UTC, reports duplicates/conflicts, and applies three rules: repeated sign-in failures then success, protected-role assignment, and large or over-cap export. JSON alerts and CSV/Markdown queues retain evidence, priority rationale, confidence and unknowns. Actor groups are triage aids, not proof of causation. See the [detection catalog](docs/detection_catalog.md).
 
@@ -23,7 +23,7 @@ The detector returns 0 for complete input, 2 for invalid configuration/input or 
 
 ## Frozen detection experiment
 
-The original five-failure sign-in profile remains the default, version 1.0. The opt-in version 1.1 profile lowers the threshold to four and leaves the time and reset rules intact. Its [plan](docs/strengthening_experiment.md) and [freeze](reports/strengthening/freeze.json) predate the first holdout run. Fixture versions, seeds and hashes are in the [manifest](data/strengthening_fixture_manifest.json).
+The original five-failure sign-in profile remains the default, version 1.0. The opt-in version 1.1 profile lowers the threshold to four and leaves the time and reset rules intact. Its [plan](docs/strengthening_experiment.md) and [freeze](reports/strengthening/freeze.json) record the original experiment and a later resource-name migration. The migrated data was rerun for consistency, not as a new blind holdout. Fixture versions, seeds and current hashes are in the [manifest](data/strengthening_fixture_manifest.json).
 
 On 12 self-authored holdout scenarios, baseline produced four alerts (two high, two medium), TP/FP/TN/FN **2/2/5/3**, precision **2/4** and recall **2/5**. The revised profile produced seven alerts (two high, five medium), **4/3/4/1**, precision **4/7** and recall **4/5**. Exact candidate/evidence matches were **4/4** and **7/7**, respectively. The revised rule caught two additional simulated malicious scenarios but also added one benign alert. See the [full summary](reports/strengthening/summary.json). These scenarios were authored by the experiment author and are neither independently collected nor representative of real traffic.
 
@@ -36,7 +36,7 @@ To reproduce the development comparison without changing recorded results:
 .venv/bin/python -m secops_lab.evaluate reports/runs/dev_revised.json data/labels/strengthening_development_revised_v1.json --check
 ```
 
-For an independent rerun of the frozen holdout, substitute `holdout` for `development` in the input and label paths and use new output filenames. Reusing this small holdout for further tuning invalidates its original role; record any reuse. `scripts/summarize_strengthening.py` checks the frozen hashes and summarizes the already recorded runs without rerunning the detector.
+To rerun the holdout, substitute `holdout` for `development` in the input and label paths and use new output filenames. The holdout has already been reused to verify the resource-name migration; further tuning against it cannot be treated as a blind evaluation. `scripts/summarize_strengthening.py` checks the current migration hashes and summarizes the recorded runs without rerunning the detector.
 
 ## Investigations and learning
 

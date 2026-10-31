@@ -13,11 +13,12 @@ def main():
     parser.add_argument("--output", default="reports/runs/strengthening_summary.json")
     args=parser.parse_args()
     freeze=json.loads((ROOT/'reports/strengthening/freeze.json').read_text())
-    for path,digest in freeze['files'].items():
+    checked_files=freeze.get('post_freeze_migration', {}).get('files', freeze['files'])
+    for path,digest in checked_files.items():
         if hashlib.sha256((ROOT/path).read_bytes()).hexdigest()!=digest:
             raise ValueError(f'frozen artifact changed: {path}')
     summary={'status':'complete','dataset':'self-authored synthetic scenarios; not independently collected or representative',
-             'holdout_runs':'one detector/evaluator run per profile after freeze', 'splits':{}}
+             'holdout_runs':'originally one detector/evaluator run per profile after freeze; rerun after resource-name migration for consistency, not a blind evaluation', 'splits':{}}
     for split in ('development','holdout'):
         summary['splits'][split]={}
         predicted={}

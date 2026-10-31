@@ -2,7 +2,7 @@
 
 ## Page 1 of 2 - Problem and design
 
-**Scope.** This security-operations exercise models a fictional fitness application using synthetic identities, documentation IP addresses and imaginary metadata counts. It does not access health records or real accounts. It is a portfolio lab, not production SOC work.
+**Scope.** This security-operations exercise models a fictional application using synthetic identities, documentation IP addresses and imaginary metadata counts. It does not access health records or real accounts. It is a portfolio lab, not production SOC work.
 
 **Problem.** An analyst needs a queue that makes unusual sign-ins, protected-role assignments and exports reviewable without treating a rule match as proof of compromise. The lab must expose data-quality errors, preserve evidence and keep scenario answers away from detection.
 
@@ -22,6 +22,6 @@
 
 **Verification.** A strict evaluator returns nonzero when candidate/evidence expectations fail, while ordinary report generation can complete despite mismatches. Meaningful tests cover rule boundaries, approval checks, partial input, strict evaluation and follow-up references. Tests and evidence checks are self-review, not independent review. Export approval usage depends on supplied events; overlapping windows may increase queue volume.
 
-**Limits and reproducibility.** Follow the README for offline commands. Original fixtures, labels and reports remain preserved. No user contact, containment, real incident, production deployment or operational impact is claimed. A clean worktree of the local commit passed the setup check, 29 tests, baseline evaluation and investigation-evidence check.
+**Limits and reproducibility.** Follow the README for offline commands. An export resource was renamed after the original experiment; the original freeze hashes and later migration are documented. No user contact, containment, real incident, production deployment or operational impact is claimed. A clean worktree of an earlier local commit passed the setup check, 29 tests, baseline evaluation and investigation-evidence check.
 
 **Evidence.** `reports/strengthening/summary.json`; `reports/strengthening/freeze.json`; `docs/investigations/`; `data/investigations/followup_evidence_v1.json`; `tests/`.

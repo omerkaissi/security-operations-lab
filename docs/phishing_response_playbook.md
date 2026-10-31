@@ -1,6 +1,6 @@
 # Fictional phishing response: playbook and paper walkthrough
 
-This is an offline exercise for the fictional fitness application. It describes decisions an analyst could make; no message was received, no link was visited, no mailbox was searched, no user was contacted, and no account or system was changed. The illustrative message below is a paper artifact, not an event or alert in the lab dataset. It has no asserted connection to either investigation.
+This is an offline exercise for the fictional application. It describes decisions an analyst could make; no message was received, no link was visited, no mailbox was searched, no user was contacted, and no account or system was changed. The illustrative message below is a paper artifact, not an event or alert in the lab dataset. It has no asserted connection to either investigation.
 
 ## Response playbook
 
@@ -16,10 +16,10 @@ This is an offline exercise for the fictional fitness application. It describes 
 
 The following is a constructed exercise prompt, not an observed lab message. `PAPER-MSG-01` is an exercise identifier, **not** an event ID or alert ID. No live address or URL is intended.
 
-- Claimed sender: `Pulse Benefits Desk <benefits@pulse-benefits.example>`.
+- Claimed sender: `Account Support <support@account-access.example>`.
 - Claimed recipient: `member17@pulse-lab.example`.
-- Subject: “Action needed to keep your fitness benefits.”
-- Body summary: asks the recipient to sign in urgently at `hxxps://pulse-benefits.example/verify` and warns of benefit suspension.
+- Subject: “Action needed to keep your account access.”
+- Body summary: asks the recipient to sign in urgently at `hxxps://account-access.example/verify` and warns of account suspension.
 - Exercise intake: a fictional recipient reports receiving the message; the prompt supplies no evidence about opening the link or entering information.
 
 The `.example` domain and disabled `hxxps` representation are fictional placeholders. The claimed sender and urgency justify investigation, but the prompt supplies no verified sender authentication, delivery headers, policy baseline or recipient action.
@@ -29,7 +29,7 @@ The `.example` domain and disabled `hxxps` representation are fictional placehol
 | Step | Paper observation or hypothetical branch | Proposed response | Decision limit |
 | --- | --- | --- | --- |
 | 1 | Only the constructed intake artifact is available. | Preserve the supplied artifact and request original headers through the appropriate authorized process. | No message handling or preservation was actually performed. |
-| 2 | The message asks for a sign-in under time pressure and uses a domain different from the fictional recipient domain. | Compare the destination and sender with a trusted benefits inventory and inspect headers without visiting the link. | A domain difference or urgency is not conclusive proof of phishing. |
+| 2 | The message asks for a sign-in under time pressure and uses a domain different from the fictional recipient domain. | Compare the destination and sender with trusted account-service records and inspect headers without visiting the link. | A domain difference or urgency is not conclusive proof of phishing. |
 | 3 | The prompt says nothing about a click or credential entry. | Ask the fictional recipient via an independently verified channel whether any interaction occurred; do not ask for secrets. | No confirmation or outreach occurred. |
 | 4A | **Hypothetical:** reliable evidence later shows credentials were entered. | Escalate; consider revoking sessions, resetting credentials and reviewing sign-in/MFA records under the authorized process. | This branch is conditional; none of these actions or findings occurred. |
 | 4B | **Hypothetical:** a trusted source verifies the message and no suspicious activity is found. | Record the evidence and consider benign closure under the applicable process. | The exercise provides no such verification, so this branch is not the current disposition. |

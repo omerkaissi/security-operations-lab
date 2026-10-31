@@ -1,6 +1,6 @@
 {
   "dataset": "self-authored synthetic scenarios; not independently collected or representative",
-  "holdout_runs": "one detector/evaluator run per profile after freeze",
+  "holdout_runs": "originally one detector/evaluator run per profile after freeze; rerun after resource-name migration for consistency, not a blind evaluation",
   "splits": {
     "development": {
       "baseline": {

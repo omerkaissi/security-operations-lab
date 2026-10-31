@@ -4,7 +4,7 @@ A planned script, not a recording or a claim that anyone presented it. Practice 
 
 ## 0:00-0:25 - Problem and scope
 
-“This offline fictional fitness-app lab turns sign-ins, role changes and export counts into evidence-linked triage alerts. It uses synthetic data, not real health records. A rule match is a hypothesis, not proof of compromise.”
+“This offline fictional application-security lab turns sign-ins, role changes and export counts into evidence-linked triage alerts. It uses synthetic data, not real health records. A rule match is a hypothesis, not proof of compromise.”
 
 ## 0:25-1:15 - Measured comparison
 

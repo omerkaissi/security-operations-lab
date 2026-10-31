@@ -33,7 +33,7 @@ def role(name, actor, seconds, truth, change, expected):
 
 def export(name, actor, seconds, count, truth, expected):
     e={'schema_version':'1.0','event_id':name+'_E','timestamp':stamp(seconds),'actor_id':actor,'event_type':'data_export','outcome':'success',
-       'source':'application_audit','resource':'fitness_session_metadata','record_count':count}
+       'source':'application_audit','resource':'account_activity_metadata','record_count':count}
     return name, truth, [e], {'baseline':expected,'revised':expected}, 'large_export'
 
 

@@ -17,7 +17,7 @@ One JSON object per nonblank JSONL line. Every record is fictional. The common `
 | previous_role | enum | Required only for role changes; prior observed role |
 | new_role | enum | Required only for role changes; requested/assigned role according to outcome |
 | change_id | string | Optional only for role changes; purported approval reference, never proof by itself |
-| resource | enum | Required only for exports; `fitness_session_metadata` or `public_activity_catalog` |
+| resource | enum | Required only for exports; `account_activity_metadata` or `public_activity_catalog` |
 | record_count | integer | Required only for exports, ≥0; reject booleans, strings, fractions and negative numbers |
 
 Role values: `none`, `member`, `support`, `data_export_admin`, `organization_admin`. IDs use the same syntax as event_id. Explicit nulls, unknown keys and fields attached to the wrong event type are invalid. Failure events represent attempts; `record_count` on a failed export is the requested amount and contributes zero to aggregation.
