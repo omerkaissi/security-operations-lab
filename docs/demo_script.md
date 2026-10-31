@@ -26,4 +26,4 @@ Open `docs/investigations/actor_029.md` and `data/investigations/followup_eviden
 
 ## 2:40-3:00 - Contribution and limitations
 
-“Codex prepared the implementation and documents. I worked through the rule with guidance, edited a scratch policy, ran the detector and tests, and explained the false-positive tradeoff. The data and labels are hand-authored, review is not independent, and a committed fresh-checkout verification remains outstanding.”
+“Codex prepared the implementation and documents. I worked through the rule with guidance, edited a scratch policy, ran the detector and tests, and explained the false-positive tradeoff. The data and labels are hand-authored, and review is not independent.”

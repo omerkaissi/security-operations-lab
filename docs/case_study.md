@@ -22,6 +22,6 @@
 
 **Verification.** A strict evaluator returns nonzero when candidate/evidence expectations fail, while ordinary report generation can complete despite mismatches. Meaningful tests cover rule boundaries, approval checks, partial input, strict evaluation and follow-up references. Tests and evidence checks are self-review, not independent review. Export approval usage depends on supplied events; overlapping windows may increase queue volume.
 
-**Limits and reproducibility.** Follow the README for offline commands. Original fixtures, labels and reports remain preserved. No user contact, containment, real incident, production deployment or operational impact is claimed. Git has no committed revision; a fresh committed-checkout test and publication privacy review remain outstanding.
+**Limits and reproducibility.** Follow the README for offline commands. Original fixtures, labels and reports remain preserved. No user contact, containment, real incident, production deployment or operational impact is claimed. A clean worktree of the local commit passed the setup check, 29 tests, baseline evaluation and investigation-evidence check.
 
 **Evidence.** `reports/strengthening/summary.json`; `reports/strengthening/freeze.json`; `docs/investigations/`; `data/investigations/followup_evidence_v1.json`; `tests/`.
