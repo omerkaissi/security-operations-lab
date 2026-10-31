@@ -2,7 +2,7 @@
 
 ## Outcome and scope
 
-Build a small, offline security operations case study for a portfolio: three Python detections, a prioritized alert queue, meaningful tests, honest synthetic evaluation, two investigations and a phishing-response playbook. The fictional setting is a fitness application; it has no WHOOP affiliation or access. This is separate from the existing WHOOP–ChatGPT integration.
+Build a small, offline security operations case study for a portfolio: three Python detections, a prioritized alert queue, meaningful tests, honest synthetic evaluation, two investigations and a phishing-response playbook. The fictional setting is a fitness application; it has no WHOOP affiliation or access. This is separate from existing personal integrations.
 
 The selected Security Operations Lab directory is the authoritative source. The originally proposed `~/Projects/fitness-security-operations-lab` directory was absent during setup; no second working copy was created. Commands and program outputs use relative paths so the project can later move without code changes.
 
@@ -63,13 +63,13 @@ Required tests later: below/at/above thresholds; exact/just-outside windows; sep
 
 | Checkpoint | Deliverables | Completion evidence |
 | --- | --- | --- |
-| 01 — CODEX | Environment, scope, working rules, schema, policy, scenario matrix, first fixtures | Actual environment, parse/integrity and reproducibility checks; Git/Python limitations explicit |
-| 02 — CODEX | Validation, normalization, sign-in rule, alert output, tests | Successful CLI example and unittest results; true candidate and benign explanation |
-| 03 — CODEX | Role/export rules, queue, errors and evaluation | Full meaningful tests and actual matching/count reports |
-| 04 — BOTH | Two investigations, phishing playbook with invented paper walkthrough | Every cited alert/event exists; evidence distinguished from inference |
-| 05 — BOTH | README, two-page case study, three-minute demo, interview notes, GitHub handoff and claim mapping | Clean reproduction, self-review and honest final limitations |
+| 01 | Environment, scope, working rules, schema, policy, scenario matrix, first fixtures | Actual environment, parse/integrity and reproducibility checks; Git/Python limitations explicit |
+| 02 | Validation, normalization, sign-in rule, alert output, tests | Successful CLI example and unittest results; true candidate and benign explanation |
+| 03 | Role/export rules, queue, errors and evaluation | Full meaningful tests and actual matching/count reports |
+| 04 | Two investigations, phishing playbook with invented paper walkthrough | Every cited alert/event exists; evidence distinguished from inference |
+| 05 | README, two-page case study, three-minute demo, interview notes, GitHub handoff and claim mapping | Clean reproduction, self-review and honest final limitations |
 
-Current authorization: **Checkpoint 05 strengthening pass**: the user authorized the bounded experiment, completed fictional investigation exercises, strict evaluator, hands-on walkthrough, and release preparation. The experiment plan and versioned profile are in docs/strengthening_experiment.md. Publication, pushing, licensing, outreach and resume edits still require explicit instruction. A checkpoint boundary is for explanation, not repetitive edit approval. Suggested setting: GPT-6.1 Sol / High; final technical review Extra High. Do not claim model controls were changed or that the user answered teach-back questions.
+Current authorization: **Checkpoint 05 strengthening pass**: the user authorized the bounded experiment, completed fictional investigation exercises, strict evaluator, hands-on walkthrough, and release preparation. The experiment plan and versioned profile are in docs/strengthening_experiment.md. Publication, pushing, licensing, outreach and resume edits still require explicit instruction. A checkpoint boundary is for explanation, not repetitive edit approval. Do not imply that review is independent or invent user participation.
 
 Complete v1 only after all three rules, tests, honest evaluation, traceable queue, investigations, playbook and reproducible portfolio evidence exist. Do not claim production SOC work, incidents, operational impact or real-world detection accuracy. Prepare accurate resume suggestions only from completed evidence; preserve existing employers and format.
 

@@ -1,6 +1,6 @@
 # Three-minute demo script
 
-A planned script, not a recording or a claim that anyone presented it. Practice with a timer; durations are cues. The project was prepared with Codex assistance. State only the parts you personally reviewed, ran or changed. The owner completed the guided hands-on walkthrough; no video or presentation has been recorded.
+A planned script, not a recording or a claim that anyone presented it. Practice with a timer; durations are cues. State only the parts you personally reviewed, ran or changed. The owner completed the guided hands-on walkthrough; no video or presentation has been recorded.
 
 ## 0:00-0:25 - Problem and scope
 
@@ -8,7 +8,7 @@ A planned script, not a recording or a claim that anyone presented it. Practice 
 
 ## 0:25-1:15 - Measured comparison
 
-Open `docs/strengthening_experiment.md` and `reports/strengthening/summary.json`. “The baseline needs five sign-in failures. Codex froze an experimental four-failure profile after development and evaluated it on a separate authored holdout. Baseline had four alerts and scenario counts TP 2, FP 2, TN 5, FN 3. Revised had seven alerts and TP 4, FP 3, TN 4, FN 1. Each profile's candidate and evidence expectations matched exactly. The revised profile recovers H01 and H08 but adds benign H02. These are self-authored scenarios, not real-world accuracy.”
+Open `docs/strengthening_experiment.md` and `reports/strengthening/summary.json`. “The baseline needs five sign-in failures. An experimental four-failure profile was frozen after development and evaluated on a separate authored holdout. Baseline had four alerts and scenario counts TP 2, FP 2, TN 5, FN 3. Revised had seven alerts and TP 4, FP 3, TN 4, FN 1. Each profile's candidate and evidence expectations matched exactly. The revised profile recovers H01 and H08 but adds benign H02. These are self-authored scenarios, not real-world accuracy.”
 
 ## 1:15-2:00 - Show strict verification
 
